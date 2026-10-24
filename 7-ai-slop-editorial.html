@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ledger — Transform the way your team works</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f5f3ee; --ink:#141414; --muted:#6a665e; --rule:#1a1a1a; --red:#b3202a; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--paper); color:var(--ink); font-family:"Source Serif 4",Georgia,serif; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; }
+.mono { font-family:"IBM Plex Mono",monospace; }
+nav { display:flex; align-items:center; justify-content:space-between; padding:16px 32px; border-bottom:3px double var(--rule); gap:20px; flex-wrap:wrap; }
+.mast { display:flex; align-items:center; gap:20px; }
+.logo { font-family:"Playfair Display",serif; font-weight:900; font-size:26px; letter-spacing:-.02em; }
+.edition { font-size:11px; border:1px solid var(--rule); padding:4px 10px; letter-spacing:.05em; }
+.links { display:flex; gap:30px; font-family:"Helvetica Neue",Arial,sans-serif; font-weight:600; font-size:13px; letter-spacing:.1em; }
+.sub-btn { background:var(--ink); color:var(--paper); padding:10px 18px; font-size:11px; letter-spacing:.14em; font-variant:small-caps; font-weight:600; }
+.page { display:grid; grid-template-columns:1fr 290px; border-bottom:1px solid var(--rule); }
+.main { padding:40px 44px 50px; border-right:1px solid var(--rule); }
+.kicker { width:90px; border-top:2px solid var(--ink); margin-bottom:22px; }
+h1 { font-family:"Playfair Display",serif; font-weight:900; font-size:clamp(56px,8.6vw,124px); line-height:.9; letter-spacing:-.035em; }
+.below { display:grid; grid-template-columns:1fr 200px; gap:40px; margin-top:34px; align-items:start; }
+.deck { font-size:19px; line-height:1.6; }
+.deck::first-letter { font-family:"Playfair Display",serif; font-size:64px; float:left; line-height:.8; margin:6px 10px 0 0; color:var(--red); font-weight:900; }
+.btn { display:block; text-align:center; padding:13px 10px; font-size:11px; letter-spacing:.18em; font-weight:600; font-family:"Source Serif 4",serif; text-transform:uppercase; border:1px solid var(--ink); margin-bottom:10px; }
+.btn.dark { background:var(--ink); color:var(--paper); }
+.join { font-size:10px; color:var(--muted); text-align:center; margin-top:10px; line-height:1.5; }
+.sidebar { padding:0; }
+.metric { display:flex; justify-content:space-between; align-items:baseline; padding:16px 22px; border-bottom:1px solid #cfcac0; }
+.metric .lab { font-size:12px; color:var(--muted); }
+.metric b { font-family:"Playfair Display",serif; font-size:22px; display:block; text-align:right; }
+.metric small { display:block; font-size:9px; color:var(--red); text-align:right; }
+.ad { margin:30px 22px; border:1px solid var(--rule); padding:10px; text-align:center; }
+.ad .t { font-size:10px; letter-spacing:.2em; margin-bottom:8px; }
+.ad .box { background:var(--ink); color:var(--paper); height:180px; display:grid; place-items:center; font-size:34px; }
+.ad p { font-size:13px; margin-top:10px; font-style:italic; }
+.ticker { border-bottom:1px solid var(--rule); padding:10px 32px; display:flex; gap:40px; font-size:12px; overflow:hidden; white-space:nowrap; }
+.ticker b { color:var(--red); }
+.cols { display:grid; grid-template-columns:repeat(3,1fr); border-bottom:3px double var(--rule); }
+.col { padding:40px 32px; border-right:1px solid var(--rule); }
+.col:last-child { border-right:none; }
+.col .sec { font-size:11px; letter-spacing:.16em; color:var(--red); }
+.col h3 { font-family:"Playfair Display",serif; font-size:30px; line-height:1.05; margin:12px 0 14px; letter-spacing:-.01em; }
+.col p { font-size:16px; line-height:1.65; color:#2b2924; }
+.col .by { font-size:11px; color:var(--muted); margin-top:16px; }
+.quote { padding:80px 32px; text-align:center; border-bottom:1px solid var(--rule); }
+.quote blockquote { font-family:"Playfair Display",serif; font-size:clamp(28px,4vw,48px); font-style:italic; line-height:1.2; max-width:900px; margin:0 auto; }
+.quote cite { display:block; margin-top:20px; font-style:normal; font-size:12px; letter-spacing:.14em; color:var(--muted); }
+.cta { padding:80px 32px; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; border-bottom:3px double var(--rule); }
+.cta h2 { font-family:"Playfair Display",serif; font-weight:900; font-size:clamp(40px,6vw,80px); line-height:.95; letter-spacing:-.03em; }
+.cta .btn { padding:16px 40px; }
+footer { padding:24px 32px; display:flex; justify-content:space-between; font-size:11px; color:var(--muted); flex-wrap:wrap; gap:10px; }
+@media (max-width:900px) {
+  .links { display:none; }
+  .page { grid-template-columns:1fr; }
+  .main { border-right:none; padding:30px 22px; }
+  .below, .cols, .cta { grid-template-columns:1fr; }
+  .col { border-right:none; border-bottom:1px solid var(--rule); }
+  .sidebar { border-top:1px solid var(--rule); }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="mast"><div class="logo">THE LEDGER</div><div class="edition mono">VOL. 1 &nbsp;|&nbsp; 10/19/2026 &nbsp;|&nbsp; NEW YORK EDITION</div></div>
+  <div class="links"><a href="#">FEATURES</a><a href="#">PRICING</a><a href="#">BLOG</a><a href="#">ABOUT</a></div>
+  <a href="#" class="sub-btn">SUBSCRIBE</a>
+</nav>
+
+<div class="ticker mono"><span>TEAMS ONBOARDED <b>▲ 12%</b></span><span>WORKFLOWS AUTOMATED <b>▲ 3.4M</b></span><span>HOURS SAVED <b>▲ 1.2M</b></span><span>NPS <b>72</b></span><span>UPTIME <b>99.99%</b></span></div>
+
+<div class="page">
+  <div class="main">
+    <div class="kicker"></div>
+    <h1>Transform the way your team works</h1>
+    <div class="below">
+      <p class="deck">The Ledger brings your team together with powerful tools designed to streamline workflows, boost productivity, and drive results. Built for the modern era of work — and the teams who define it.</p>
+      <div>
+        <a href="#" class="btn dark">Start free trial</a>
+        <a href="#" class="btn">Watch demo</a>
+        <p class="join mono">Join 50,000+ teams already using The Ledger</p>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar mono">
+    <div class="metric"><span class="lab">Active Users</span><div><b>500k+</b><small>+12% this month</small></div></div>
+    <div class="metric"><span class="lab">Uptime SLA</span><div><b>99.99%</b><small>Enterprise grade</small></div></div>
+    <div class="metric"><span class="lab">Support Access</span><div><b>24/7</b><small>Global coverage</small></div></div>
+    <div class="metric"><span class="lab">Customer Savings</span><div><b>$10M+</b><small>Annual total</small></div></div>
+    <div class="ad"><div class="t">ADVERTISEMENT</div><div class="box">⚡</div><p>Work smarter. Not harder.</p></div>
+  </aside>
+</div>
+
+<section class="cols">
+  <article class="col"><div class="sec mono">PRODUCTIVITY</div><h3>The quiet revolution reshaping how teams collaborate</h3><p>In an age of endless notifications, one platform is cutting through the noise — giving teams back the one resource they can't buy: time.</p><div class="by mono">BY THE EDITORS · 4 MIN READ</div></article>
+  <article class="col"><div class="sec mono">AUTOMATION</div><h3>Why the smartest companies are automating everything</h3><p>From startups to the Fortune 500, leaders are discovering that intelligent workflows aren't a luxury. They're the new baseline.</p><div class="by mono">BY THE EDITORS · 6 MIN READ</div></article>
+  <article class="col"><div class="sec mono">INSIGHTS</div><h3>Data, distilled: decisions at the speed of thought</h3><p>Real-time analytics transform raw numbers into clear narratives — so every team member can act with confidence.</p><div class="by mono">BY THE EDITORS · 3 MIN READ</div></article>
+</section>
+
+<section class="quote">
+  <blockquote>“The Ledger didn't just change our workflow. It changed how we think about work entirely.”</blockquote>
+  <cite class="mono">— JAMES WHITFIELD, VP OF OPERATIONS, MERIDIAN</cite>
+</section>
+
+<section class="cta">
+  <h2>The future of work<br>is already here.</h2>
+  <a href="#" class="btn dark">Start free trial</a>
+</section>
+
+<footer class="mono"><span>© 2026 THE LEDGER INC. ALL RIGHTS RESERVED.</span><span>PRIVACY · TERMS · CONTACT</span></footer>
+</body>
+</html>
